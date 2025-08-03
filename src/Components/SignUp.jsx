@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { data, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import authService from '../appwrite/auth';
 import login from '../store/authSlice'
 import Logo from './Logo';
 import Input from './Input';
+import Button from './Button';
 
 const SignUp = () => {
     const navigate = useNavigate()

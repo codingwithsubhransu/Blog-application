@@ -35,13 +35,15 @@ export class AuthService{
         }
     }
 
-    async getCurrentUser(){
+    async getCurrentUser() {
         try {
+            // This will now succeed if there is an active session
             return await this.account.get();
         } catch (error) {
-            console.log("Appwrite service error", error);
+            // This error will be thrown if there's no active session
+            console.log("Appwrite service :: getCurrentUser :: no active session");
+            return null;
         }
-        return null;
     }
 
     async logout() {
